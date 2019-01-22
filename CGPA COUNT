@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace marks
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string course_code;
+            double ca_obtainedmarks, ca_obtainedactucalmarks, mtt_obtainedmarks, ete_obtainedmarks;
+            double ca_totalmarks = 100, mtt_totalmarks = 40, ete_totalmarks = 70;
+            double ca_wtg = 25;
+            double mtt_wtg = 20;
+            double ete_wtg = 50;
+            double att = 5;
+
+            Console.WriteLine("enter course code :");
+            course_code = Console.ReadLine();
+            Console.WriteLine("enter ca marks :");
+            ca_obtainedmarks =double.Parse(Console.ReadLine());
+            Console.WriteLine("enter mtt marks");
+            mtt_obtainedmarks = double.Parse(Console.ReadLine());
+            Console.WriteLine("enter ete marks :");
+            ete_obtainedmarks = double.Parse(Console.ReadLine());
+            ca_obtainedactucalmarks = (ca_obtainedmarks * 100) / 60;
+            double total = (ca_obtainedactucalmarks * ca_wtg) / ca_totalmarks + (mtt_obtainedmarks * mtt_wtg) / mtt_totalmarks +
+                (ete_obtainedmarks * ete_wtg) / ete_totalmarks + att;
+            Console.WriteLine("total percentage:" + total);
+            Console.WriteLine("cgpa:"+total/10);
+            Console.ReadKey();
+
+        }
+    }
+}
